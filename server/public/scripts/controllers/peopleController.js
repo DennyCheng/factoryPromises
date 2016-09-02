@@ -8,6 +8,7 @@ myApp.controller('PeopleController', ['$scope', 'DataFactory', function($scope, 
 
     // tell the factory to get data from the DB so we can use it
     if($scope.dataFactory.peopleData() === undefined) {
+      //this means the factory has no data to give us
       console.log('factory has no data, getting it now.');
       $scope.dataFactory.retrieveData().then(function() {
         //when $scope.dataFactory.retrieveData() is called it "jumps" to the dataFactory
